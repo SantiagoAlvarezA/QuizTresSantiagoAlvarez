@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h2>Lista De Vehiculos Matriculados</h2><br>
             <div class="row">
-                <div class="card col-5 img-card-jm" style="width: 18rem;" *ngFor="let vehicle of vehicles | async">
-                    <img class="card-img-top" src="{{vehicle.img}}" alt="Card image cap" width="100" height="180">
+                <div class="card col-6 img-card-jm" style="width: 18rem;" *ngFor="let vehicle of vehicles | async">
+                    <img class="card-img-top" src="{{vehicle.img}}" alt="image vehicle"  height="180">
                     <div class="card-body">
                         <h5 class="card-title">{{vehicle.maker}}</h5>
                         <p class="card-text">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">vehicle
+        <div class="col-md-4">
             <h2>Crear vehiculo</h2><br>
             <div class="form-group">
                 <label>Fabricante</label>

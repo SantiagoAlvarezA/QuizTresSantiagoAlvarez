@@ -18,6 +18,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { VehiclesService } from './services/vehicles.service';
+import { UsersComponent } from './users/users.component';
+import { UsersService } from './services/users.service';
 
 //////////////////////////////
 
@@ -26,6 +28,7 @@ import { VehiclesService } from './services/vehicles.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'vehicles', component: VehiclesComponent },
+  { path: 'users', component: UsersComponent },
 ];
 /////////////////////////
 
@@ -35,7 +38,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [VehiclesService],
+  providers: [VehiclesService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

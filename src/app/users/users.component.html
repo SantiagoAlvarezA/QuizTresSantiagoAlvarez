@@ -1,0 +1,58 @@
+<div class="row  mb-5 font-weight-bold">
+
+  <div class="col-4 ">
+    <label for="">Nombre:</label>
+    <input type="text" class="border border-dark rounded form-control" [(ngModel)]="user.name">
+  </div>
+
+  <div class="col-4 ">
+    <label for="">Correo electrónico:</label>
+    <input type="email" class="border border-dark   rounded form-control" [(ngModel)]="user.email">
+  </div>
+
+  <div class="col-3 ">
+    <label for="">Celular:</label>
+    <input type="tel" class="border border-dark rounded form-control" [(ngModel)]="user.phone">
+  </div>
+  <div class="col-1 align-self-end mb-1">
+    <button class="btn btn-success btn-sm" (click)="validateStatusButton()">{{textButton}}</button>
+  </div>
+
+
+</div>
+
+
+
+<div class="m-2 p-2 col-12 border border-dark rounded row" *ngFor="let user of users | async">
+
+
+
+
+
+
+  <img class=" col-1 align-self-center" src="https://cdn2.iconfinder.com/data/icons/ios-7-tab-bar-icons/500/user-512.png" width="50px"
+    height="50px" alt="">
+
+  <div class="col-9 form-group align-self-center">
+
+    <h3 for="" class="font-weight-bold">{{user.name}}</h3>
+    <h2 for="" class="text-danger">{{user.email}}</h2>
+    <label for="">{{user.phone}}</label>
+
+
+  </div>
+
+
+
+
+  <div class="col-2 row align-self-center">
+    <button class="btn-primary m-1 btn-sm" (click)="getUser(user.id)">
+      Editar
+    </button>
+    <button class="btn btn-danger m-1 btn-sm" (click)="deleteUser(user.id)">
+      Eliminar
+    </button>
+  </div>
+
+
+</div>
